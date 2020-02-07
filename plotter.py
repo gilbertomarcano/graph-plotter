@@ -1,21 +1,6 @@
 import matplotlib.pyplot as plt
 
-# Main class of the program
-def main():
-    canvas = Canvas(filename='graph')
-    p0 = Point2D(0, 2)
-    p1 = Point2D(5, 9)
-    l0 = Line2D(p0, p1)
-    canvas.plot_line(l0)
-
-    canvas.plot_line(Line2D(Point2D(6, 9), Point2D(13, 0)))
-    canvas.delete_last()
-
-    canvas.plot_line(Line2D(Point2D(20, 10), Point2D(30, 80)))
-    canvas.plot_line(Line2D(Point2D(-50, -34), Point2D(-30, 4)))
-
-    canvas.delete_last()
-    canvas.delete_last()
+from random import randint
 
 class Point2D:
     ''' Class that represents an Euclidean point in a two-dimensional space
@@ -38,8 +23,8 @@ class Line2D:
     def get_endpoints(self):
         return self.endpoints
 
-# Canvas class
-class Canvas:
+# Plotter class
+class Plotter:
     ''' Class that represents the canvas where the line segments will be plotted
     '''
 
@@ -54,7 +39,6 @@ class Canvas:
         self.ylimit = ymax
 
         # Set the initial minimum and maximum points in the axes
-        self.update()
         plt.xlabel('Eje X')
         plt.ylabel('Eje Y')
         self.axes = plt.gca()
@@ -63,7 +47,13 @@ class Canvas:
         self.filename = filename
         self.extension = extension
 
+        self.update()
+        self.auto_rescale()
+
         self.dbg_count = 0
+
+    def get_file(self):
+        return f'{self.filename}.{self.extension}';
     
     # Set and return the lowest values in the list which contains the points
     def get_min(self):
@@ -101,17 +91,19 @@ class Canvas:
 
     # Delete the last line added
     def delete_last(self):
-        line = self.lines.pop()
-        self.axes.lines.remove(line)
+        if self.lines:
+            line = self.lines.pop()
+            self.axes.lines.remove(line)
 
-        self.x_list.pop()
-        self.x_list.pop()
+            self.x_list.pop()
+            self.x_list.pop()
 
-        self.y_list.pop()
-        self.y_list.pop()
+            self.y_list.pop()
+            self.y_list.pop()
 
-        self.update()
-        self.auto_rescale()    
+            self.update()
+            self.auto_rescale() 
+           
 
     # Update the minimum and maximum point values     
     def update(self):
@@ -137,13 +129,13 @@ class Canvas:
     
     # Generate an updated file
     def save(self):
-        plt.savefig(self.filename + str(self.dbg_count) + '.' + self.extension)
+        plt.savefig(self.get_file())
         # Debug purposes
-        print(f'saved {self.dbg_count}')
-        self.dbg_count += 1
-    
-if __name__ == '__main__':
-    main()
+        # print(f'saved {self.dbg_count}')
+        # self.dbg_count += 1
 
+def randpoint():
+    return Point2D(randint(-50, 50), randint(-50, 50))
 
-
+def randline():
+    return Line2D(randpoint(), randpoint())
