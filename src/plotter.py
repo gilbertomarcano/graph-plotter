@@ -34,7 +34,6 @@ class Plotter:
         self.y_list = [ymin, ymax]
         self.lines = []
 
-
         self.xlimit = xmax
         self.ylimit = ymax
 
@@ -43,12 +42,22 @@ class Plotter:
         plt.ylabel('Eje Y')
         self.axes = plt.gca()
 
+        # Set the axes and the grid
+        plt.plot((-100, 100), (0, 0), 'k-')
+        plt.plot((0, 0), (-100, 100), 'k-')
+        plt.grid(True)
+
+
         # Set the file properties
         self.filename = filename
         self.extension = extension
 
+        
+        
+
         self.update()
         self.auto_rescale()
+        
 
         self.dbg_count = 0
 
@@ -82,7 +91,7 @@ class Plotter:
         self.y_list.append(y1)
         self.y_list.append(y2)
         
-        new_line, = plt.plot((x1, x2), (y1, y2), 'k-')
+        new_line, = plt.plot((x1, x2), (y1, y2), 'b-')
         self.lines.append(new_line) 
 
     
