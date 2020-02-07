@@ -129,7 +129,7 @@ class Plotter:
     
     # Generate an updated file
     def save(self):
-        plt.savefig(self.get_file())
+        plt.savefig(f'./{self.get_file()}')
         # Debug purposes
         # print(f'saved {self.dbg_count}')
         # self.dbg_count += 1

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3da50617-9ff1-4301-81fe-03962b7e7d7a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>graph_plotter.py</StartupFile>
+    <StartupFile>src\graph_plotter.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,11 +22,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="plotter.py">
+    <Compile Include="src\plotter.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="graph_plotter.py" />
-    <Compile Include="gui.py">
+    <Compile Include="src\graph_plotter.py" />
+    <Compile Include="src\gui.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -42,7 +42,11 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="out.png" />
+    <Content Include=".gitignore" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
