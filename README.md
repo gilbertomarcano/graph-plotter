@@ -9,6 +9,8 @@ Windows desktop app that plots 2d lines based on two given or random points into
 
 ### Setup
 
+* Create and activate a virtual environment
+
 > Create a virtual environment
 - Windows `python -m venv env`
 - Unix `python3 -m venv env`
@@ -17,18 +19,21 @@ Windows desktop app that plots 2d lines based on two given or random points into
 - Windows `env\Scripts\activate.bat`
 - Unix `source env/bin/activate`
 
+* Install the dependencies 
+
 > Install matplotlib
 ```shell
 $ pip install matplotlib
 ```
 
 ## Usage
-* Go got src directory
+
+* Go into the source directory
 ```shell
 $ cd ../src
 ```
 
-* Run the script
+* Run the script with python
 ```shell
 $ python main.py
 ```
