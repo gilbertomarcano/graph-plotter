@@ -28,7 +28,7 @@ class Plotter:
     ''' Class that represents the canvas where the line segments will be plotted
     '''
 
-    def __init__(self, xmin=0, ymin=0, xmax=10, ymax=10, filename='out', extension='png'):
+    def __init__(self, xmin=0, ymin=0, xmax=10, ymax=10, filename='save', extension='png'):
         # Set the initial x's and y's and the limits of the canvas
         self.x_list = [xmin, xmax]
         self.y_list = [ymin, ymax]

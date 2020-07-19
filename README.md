@@ -1,5 +1,5 @@
-# graph-plotter
-Script that plots 2d lines into a canvas
+# Graph Plotter
+Windows desktop app that plots 2d lines based on two given or random points into a autoresizable cavas. 
 
 ## Installation
 
@@ -38,4 +38,5 @@ $ python main.py
 * Python GUI with tkinter
 * Add and update images with tkinter
 * Plot points and lines with matplotlib
-* Update and rescale a coordinate system with new points
+* Update and rescale a coordinate system with new point
+* Save result in a png file
