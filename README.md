@@ -10,12 +10,12 @@ Script that plots 2d lines into a canvas
 ### Setup
 
 - Create a virtual environment
-Windows `python -m venv env`
-Unix `python3 -m venv env`
+  - Windows `python -m venv env`
+  - Unix `python3 -m venv env`
 
 - Activate the virtual environment
-Windows `env\Scripts\activate`
-Unix `source env/bin/activate`
+  - Windows `env\Scripts\activate`
+  - Unix `source env/bin/activate`
 
 
 # Install dependencies
